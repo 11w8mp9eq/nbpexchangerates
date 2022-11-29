@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Currency;
 use Illuminate\Http\Request;
+use App\Services\ExchangeRatesService;
 
 class CurrencyController extends Controller
 {
@@ -14,7 +15,9 @@ class CurrencyController extends Controller
      */
     public function index()
     {
-        //
+        $exchangeRates = (new ExchangeRatesService())->getExchangeRates();
+
+        return 'Updated!';
     }
 
     /**
